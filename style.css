@@ -1,0 +1,35 @@
+/* Reset page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fullscreen video intro */
+#intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: hidden;
+}
+
+/* Video fills the screen */
+#intro-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hide main content initially */
+#main-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
