@@ -22,9 +22,17 @@
 
 /* Video fills the screen */
 #intro-video {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* ensure it always covers the container while preserving aspect ratio */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
+  pointer-events: none;
 }
 
 /* Hide main content initially */
@@ -32,4 +40,16 @@
   display: none;
   opacity: 0;
   transition: opacity 0.8s ease;
+}
+
+/* Responsive tweaks for small/mobile screens */
+@media (max-width: 768px) {
+  #intro-video {
+    /* make sure video uses viewport units on small screens to avoid letterboxing */
+    min-width: 100vw;
+    min-height: 100vh;
+    /* you can reduce crop by allowing slightly more height on very narrow screens */
+    max-width: none;
+    max-height: none;
+  }
 }
